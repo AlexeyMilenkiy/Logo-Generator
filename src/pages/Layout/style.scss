@@ -1,0 +1,47 @@
+@import "../../stylesheets/variables.scss";
+
+.Layout {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.default-container {
+  width: 347px;
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto;
+  color: $gray;
+}
+.default-headline {
+  font-family: "Helvetica-Bold", sans-serif;
+  font-size: 24px;
+  margin: 0;
+  text-align: left;
+}
+.default-tagline {
+  font-family: "Helvetica-Light", sans-serif;
+  font-size: 18px;
+  text-align: left;
+}
+.default-btn {
+  width: 79%;
+  max-width: 375px;
+  height: 48px;
+  border: none;
+  border-radius: 24px;
+  padding: 0;
+  background: $flowerblue;
+  color: white;
+  font-family: "Arial-Bold", sans-serif;
+  font-size: 10px;
+  margin-bottom: 35px;
+  outline: none;
+  &:disabled {
+    background: #bfbfbf;
+    cursor: not-allowed;
+  }
+}

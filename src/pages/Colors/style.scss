@@ -1,0 +1,15 @@
+@import "../../stylesheets/variables.scss";
+
+.Colors {
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+  margin-bottom: 146px;
+  &__list {
+    margin: 0 auto 75px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,2 @@
+export const SET_COMPANY_NAME = "SET_COMPANY_NAME";
+export const SET_COMPANY_COLOR = "SET_COMPANY_COLOR";
