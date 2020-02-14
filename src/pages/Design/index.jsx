@@ -13,7 +13,7 @@ const createFiles = async (b64svgs, canvasRef, linkRef, fileName) => {
     zip.file(`${fileName}${i}.svg`, item, { base64: true })
   );
   const pngImages = b64svgs.map((item, i) => {
-    var image = new Image();
+    const image = new Image();
     image.src = "data:image/svg+xml;base64," + item;
 
     return new Promise(resolve => {
@@ -33,7 +33,11 @@ const createFiles = async (b64svgs, canvasRef, linkRef, fileName) => {
 
   const content = await zip.generateAsync({ type: "blob" });
   if (linkRef.current) {
-    linkRef.current.href = URL.createObjectURL(content);
+    const reader = new FileReader();
+    reader.onload = () => {
+      linkRef.current.href = 'data:application/zip;base64,' + btoa(reader.result.toString());
+    };
+    reader.readAsBinaryString(content);
   }
 };
 
@@ -89,7 +93,7 @@ function Design({ companyName, companyColor }) {
     arr.push(input);
     if (arr.length === listItems.length) {
       const texts = arr.map(i =>
-        btoa('<?xml version="1.0" standalone="no"?>\r\n' + i.outerHTML)
+        btoa(unescape(encodeURIComponent('<?xml version="1.0" standalone="no"?>\r\n' + i.outerHTML)))
       );
       createFiles(texts, canvasRef, linkRef, name);
     }
@@ -114,12 +118,11 @@ function Design({ companyName, companyColor }) {
         ref={canvasRef}
         height="210"
         width="336"
-      ></canvas>
+      >''</canvas>
       <a
         href="/"
         style={{ display: "none" }}
-        ref={linkRef}
-        download="logos.zip"
+        ref={linkRef} download="logos.zip"
       >
         ''
       </a>
