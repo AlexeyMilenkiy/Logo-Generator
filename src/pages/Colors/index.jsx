@@ -11,6 +11,7 @@ function Colors({ setCompanyColor, companyColor }) {
     return (
       <ColorsContainer
         setCompanyColor={setCompanyColor}
+        settedColor={companyColor}
         key={i}
         colors={item}
       />
