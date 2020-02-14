@@ -115,7 +115,14 @@ function Design({ companyName, companyColor }) {
         height="210"
         width="336"
       ></canvas>
-      <a style={{ display: "none" }} ref={linkRef} download="logos.zip"></a>
+      <a
+        href="/"
+        style={{ display: "none" }}
+        ref={linkRef}
+        download="logos.zip"
+      >
+        ''
+      </a>
       <div className="default-container">
         <span className="default-headline">
           Let’s figure out your style next

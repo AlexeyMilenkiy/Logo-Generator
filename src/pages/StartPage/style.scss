@@ -37,8 +37,9 @@
     }
   }
   &__container {
-    width: 375px;
+    max-width: 375px;
     position: relative;
+    width: 100%;
   }
   &__error {
     font-family: "Arial", sans-serif;
