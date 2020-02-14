@@ -42,8 +42,8 @@ const createFiles = async (b64svgs, canvasRef, linkRef, fileName) => {
 };
 
 function Design({ companyName, companyColor }) {
-  const name = companyName || window.localStorage.getItem("companyName");
-  const color = companyColor || window.localStorage.getItem("companyColor");
+  const name = companyName || window.localStorage.getItem("companyName") || 'No Text';
+  const color = companyColor || window.localStorage.getItem("companyColor") || '#000000';
   const textArr = name.split(" ");
   const canvasRef = React.createRef();
   const linkRef = React.createRef();
